@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Bigger Envelope */
+.envelope {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background: pink;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.flaps {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff69b4;
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Opens the envelope when hovered */
+.envelope:hover .flaps {
+    transform: rotateX(180deg);
+}
+
+/* Birthday Card Inside */
+.birthday-card {
+    position: absolute;
+    width: 380px;
+    height: 230px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Show the card when envelope opens */
+.envelope:hover .birthday-card {
+    opacity: 1;
+}
+
+/* Floating Happy Birthday Text */
+.birthday-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff1493;
+    position: relative;
+    animation: floatUp 3s infinite ease-in-out;
+}
+
+/* Image Inside the Envelope */
+.birthday-image {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Floating Animation */
+@keyframes floatUp {
+    0% { transform: translateY(10px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(10px); }
+}
+
+/* Gift Section */
+.gift-section {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Yes Button */
+.btn-yes {
+    background: #ff4081;
+    color: white;
+    position: absolute;
+}
+
+/* No Button */
+.btn-no {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-no:hover {
+    background: #388E3C;
+}
+
+/* Hidden Image (Appears when clicking 'No') */
+.hidden-image {
+    display: none;
+    margin-top: 20px;
+    border-radius: 10px;
+}
